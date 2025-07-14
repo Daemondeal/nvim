@@ -19,29 +19,6 @@ return {
     end,
   },
 
-  -- Greeter
-  {
-    'nvimdev/dashboard-nvim',
-    event = 'VimEnter',
-    config = function()
-      require('dashboard').setup {
-        theme = 'hyper',
-        project = { enable = true, limit = 8, action = 'cd ' },
-      }
-    end,
-    dependencies = { { 'nvim-tree/nvim-web-devicons' } },
-  },
-
-  -- Projects
-  {
-    'ahmedkhalf/project.nvim',
-    config = function()
-      require('project_nvim').setup {
-        vim.keymap.set('n', '<leader>sp', '<CMD>Telescope project', { desc = '[S]earch [p]rojects' }),
-      }
-    end,
-  },
-
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
