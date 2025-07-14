@@ -2,11 +2,11 @@ local set = vim.keymap.set
 
 -- Diagnostic keymaps
 set('n', '[d', function()
-  vim.diagnostic.jump { count = 1, float = true }
+  vim.diagnostic.jump { count = -1, float = true }
 end, { desc = 'Go to previous [D]iagnostic message' })
 
 set('n', ']d', function()
-  vim.diagnostic.jump { count = -1, float = true }
+  vim.diagnostic.jump { count = 1, float = true }
 end, { desc = 'Go to next [D]iagnostic message' })
 
 set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
@@ -16,7 +16,6 @@ set('n', '<leader>p', '"_dp', { desc = '[P]aste without yanking' })
 set('v', '<leader>p', '"_dP', { desc = '[P]aste without yanking' })
 
 set({ 'n', 'v' }, '<leader>P', '"_dP', { desc = '[P]aste without yanking' })
-
 set({ 'n', 'v' }, '<leader>d', '"_d', { desc = '[D]elete without yanking' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
@@ -79,7 +78,6 @@ end, { desc = 'Copy current file:line to clipboard' })
 
 -- Run sync.sh
 set('n', '<leader>us', '<cmd>!./sync.sh<cr>', { desc = '[U]pload to [s]erver' })
-
 set('n', '<leader>rr', '<cmd>!%<CR>', { desc = '[R]un current buffer ' })
 
 -- Tabs
