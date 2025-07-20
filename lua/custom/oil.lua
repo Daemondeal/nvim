@@ -9,6 +9,7 @@ return {
           ['<C-h>'] = false,
           ['<C-l>'] = false,
           ['<M-u>'] = 'actions.select_split',
+          ['<M-r>'] = 'actions.refresh',
         },
         view_options = {
           show_hidden = true,
