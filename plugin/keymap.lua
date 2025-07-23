@@ -78,7 +78,7 @@ end, { desc = 'Copy current file:line to clipboard' })
 
 -- Run sync.sh
 set('n', '<leader>us', '<cmd>!./sync.sh<cr>', { desc = '[U]pload to [s]erver' })
-set('n', '<leader>rr', '<cmd>!%<CR>', { desc = '[R]un current buffer ' })
+set('n', '<leader>rr', '<cmd>!./%<CR>', { desc = '[R]un current buffer ' })
 
 -- Tabs
 vim.keymap.set('n', '<M-1>', '1gt')
