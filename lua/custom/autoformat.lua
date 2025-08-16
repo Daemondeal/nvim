@@ -42,5 +42,8 @@ return {
         python = { 'isort', 'black' },
       },
     },
+    init = function()
+      vim.g.disable_autoformat = false
+    end,
   },
 }

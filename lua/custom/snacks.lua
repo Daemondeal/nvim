@@ -42,11 +42,6 @@ return {
       { "<leader>uc", function() Snacks.picker.colorschemes() end, desc = "Colorschemes" },
       { "<leader>sM", function() Snacks.picker.man() end, desc = "Man Pages" },
 
-      -- { "<leader>sn", function() Snacks.picker.files()
-      --
-      --
-
-
       -- TODO: Make it work where it puts <cword> in the buffer as a start
       { '<leader>sc', function() Snacks.picker.grep({ pattern = "<cword>" }) end, desc = '[S]earch [C]urrent word' },
 
@@ -63,9 +58,9 @@ return {
         pattern = 'VeryLazy',
         callback = function()
           Snacks.toggle.inlay_hints():map '<leader>uh'
+          Snacks.toggle.indent():map '<leader>ug'
         end,
       })
-      vim.g.disable_autoformat = false
     end,
   },
 }
