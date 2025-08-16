@@ -1,11 +1,9 @@
 -- Initial configuration setup
 
--- First thing we do, we set the leader
 -- This must be done first
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- Enable nerd font
 vim.g.have_nerd_font = true
 
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'

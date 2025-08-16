@@ -1,3 +1,0 @@
-// File: name.sv
-// Author: Pietro di Maria
-// Date: 2024-00-00

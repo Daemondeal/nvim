@@ -18,18 +18,10 @@ set('v', '<leader>p', '"_dP', { desc = '[P]aste without yanking' })
 set({ 'n', 'v' }, '<leader>P', '"_dP', { desc = '[P]aste without yanking' })
 set({ 'n', 'v' }, '<leader>d', '"_d', { desc = '[D]elete without yanking' })
 
--- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
--- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
--- is not what someone will guess without a bit more experience.
---
--- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
--- or just use <C-\><C-n> to exit terminal mode
+-- TODO: Check if this is nay useful
 set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
--- Keybinds to make split navigation easier.
---  Use CTRL+<hjkl> to switch between windows
---
---  See `:help wincmd` for a list of all window commands
+-- Use CTRL+<hjkl> to switch between windows
 set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
@@ -41,22 +33,14 @@ set('n', '<M-h>', '<c-w>5>')
 set('n', '<M-k>', '<C-W>+')
 set('n', '<M-j>', '<C-W>-')
 
--- NOTE: Replaced with Oil
-
--- Keybinds for opening the file manager
--- set('n', '<leader>pv', '<cmd>Ex<CR>')
 -- Move selection up or down
 set('v', 'J', ":m '>+1<CR>gv=gv")
 set('v', 'K', ":m '<-2<CR>gv=gv")
 
--- Reformat comment
-set('v', '<leader>ca', 'gcgqgc', { desc = '[C]omment [A]lign' })
-
 -- Toggle Inlay Hints
 set('n', '<leader>ci', '<cmd> lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<CR>', { desc = '[C]ode toggle [I]nlay hints' })
 
-set('n', '<leader>gu', '<cmd> lua require("telescope.builtin").lsp_references()<CR>', { desc = '[G]o [U]sages' })
-
+-- Go to file at line. Expects "file:line" format
 vim.keymap.set('n', '<leader>gf', function()
   local clip = vim.fn.getreg '+'
   local file, lineno = string.match(clip, '([^:]+):(%d+)')
@@ -64,10 +48,11 @@ vim.keymap.set('n', '<leader>gf', function()
     vim.cmd('edit ' .. file)
     vim.cmd(lineno)
   else
-    print "Clipboard content not in 'file:line' format"
+    Snacks.notify.error "Clipboard content not in 'file:line' format"
   end
 end, { desc = 'Go to file and line from clipboard' })
 
+-- Copy current line in "file:line" format
 vim.keymap.set('n', '<leader>cl', function()
   local file = vim.fn.expand '%'
   local line = vim.fn.line '.'
@@ -76,7 +61,6 @@ vim.keymap.set('n', '<leader>cl', function()
   print('Copied to clipboard: ' .. result)
 end, { desc = 'Copy current file:line to clipboard' })
 
--- Run sync.sh
 set('n', '<leader>us', '<cmd>!./sync.sh<cr>', { desc = '[U]pload to [s]erver' })
 set('n', '<leader>rr', '<cmd>!./%<CR>', { desc = '[R]un current buffer ' })
 
