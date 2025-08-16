@@ -20,11 +20,13 @@ return {
         enabled = true,
         timeout = 2000,
       },
+      terminal = { enabled = true },
     },
 
     -- stylua: ignore
     keys = {
       { '<leader>lg', function() Snacks.lazygit() end, desc = '[L]azy [g]it', },
+      { "<c-/>",      function() Snacks.terminal() end, desc = "Toggle Terminal" },
     },
 
     init = function()
