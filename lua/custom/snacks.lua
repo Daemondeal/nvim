@@ -43,7 +43,7 @@ return {
       { "<leader>sm", function() Snacks.picker.man() end, desc = "Man Pages" },
 
       -- TODO: Make it work where it puts <cword> in the buffer as a start
-      { '<leader>sc', function() Snacks.picker.grep({ pattern = "<cword>" }) end, desc = '[S]earch [C]urrent word' },
+      -- { '<leader>sc', function() Snacks.picker.grep({ pattern = "<cword>" }) end, desc = '[S]earch [C]urrent word' },
 
       -- LSP Stuff
       { 'gd', function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition" },
