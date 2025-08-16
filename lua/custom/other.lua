@@ -206,4 +206,5 @@ return {
     end,
   },
   { 'https://github.com/vim-scripts/LargeFile' },
+  'stevearc/dressing.nvim',
 }
