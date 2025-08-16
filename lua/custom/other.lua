@@ -171,5 +171,4 @@ return {
       vim.keymap.set('', '<f1>', toggle_profile)
     end,
   },
-  { 'folke/neoconf.nvim' },
 }

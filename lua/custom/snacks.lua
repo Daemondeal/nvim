@@ -10,7 +10,7 @@ return {
       bigfile = { enabled = true },
       -- dashboard = { enabled = true },
       indent = {
-        enabled = true,
+        enabled = false,
         animate = { enabled = false },
         scope = { enabled = false },
       },
