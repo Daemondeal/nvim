@@ -11,8 +11,8 @@ return {
       vim.api.nvim_set_hl(0, 'LspInlayHint', { fg = '#5b8177', bg = 'none', italic = true })
 
       -- Change color of relative line numbers
-      vim.api.nvim_set_hl(0, 'LineNrAbove', { fg = '#595959', bg = 'none' })
-      vim.api.nvim_set_hl(0, 'LineNrBelow', { fg = '#595959', bg = 'none' })
+      vim.api.nvim_set_hl(0, 'LineNr', { fg = '#595959', bg = 'none' })
+      vim.api.nvim_set_hl(0, 'NonText', { fg = '#595959', bg = 'none' })
     end,
   },
 
