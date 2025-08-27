@@ -52,7 +52,7 @@ return {
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         clangd = {
-          cmd = { 'clangd', '--fallback-style=webkit' },
+          cmd = { '/home/piedim01/.bin/clangd_wrapper.sh', '--fallback-style=webkit' },
           on_attach = function(client, bufnr)
             _ = bufnr
             if client.server_capabilities.inlayHintProvider then
