@@ -48,3 +48,5 @@ LRU
 Prefetchers
 prefetchers
 mispredictions
+Writeback
+linefills
