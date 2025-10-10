@@ -171,4 +171,7 @@ return {
       vim.keymap.set('', '<f1>', toggle_profile)
     end,
   },
+  {
+    'veryl-lang/veryl.vim',
+  },
 }
