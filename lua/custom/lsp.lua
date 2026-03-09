@@ -61,6 +61,13 @@ return {
           },
         },
       })
+
+      vim.lsp.config('zls', {
+        settings = {
+          build_on_save_args = { "check" },
+        },
+      })
+
       require('mason').setup()
 
       local ensure_installed = vim.tbl_keys(servers or {})
