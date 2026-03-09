@@ -21,6 +21,9 @@ set({ 'n', 'v' }, '<leader>d', '"_d', { desc = '[D]elete without yanking' })
 -- TODO: Check if this is nay useful
 set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
+-- Folds
+set('n', '<leader>z', 'za', { desc = "Toggle Fold" })
+
 -- Use CTRL+<hjkl> to switch between windows
 set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
