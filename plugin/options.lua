@@ -66,6 +66,9 @@ vim.opt.swapfile = false
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+vim.opt.foldmethod = 'indent'
+vim.opt.foldenable = false
+
 -- Highlight when yanking (copying) text
 --  See `:help vim.highlight.on_yank()`
 vim.api.nvim_create_autocmd('TextYankPost', {

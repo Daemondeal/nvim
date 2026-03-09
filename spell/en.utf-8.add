@@ -50,3 +50,10 @@ prefetchers
 mispredictions
 Writeback
 linefills
+SRRIP
+Geekbench
+L1PF
+pLRU
+RRPV
+DRRIP
+RRIP
