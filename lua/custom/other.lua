@@ -126,10 +126,6 @@ return {
       },
       indent = { enable = true, disable = { 'ruby', 'c' } },
     },
-    config = function(_, opts)
-      ---@diagnostic disable-next-line: missing-fields
-      require('nvim-treesitter.configs').setup(opts)
-    end,
   },
   {
     'nvim-treesitter/nvim-treesitter-context',
@@ -194,5 +190,12 @@ return {
         vim.keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end)
         vim.keymap.set("n", "<C-S-N>", function() harpoon:list():next() end)
       end,
+  },
+  {
+    'junegunn/vim-easy-align',
+    config = function()
+      vim.keymap.set('n', 'ga', '<Plug>(EasyAlign)')
+      vim.keymap.set('x', 'ga', '<Plug>(EasyAlign)')
+    end,
   }
 }
