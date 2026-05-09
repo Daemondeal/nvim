@@ -22,7 +22,15 @@ return {
   { 'tpope/vim-sleuth' },
 
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
+  {
+    'numToStr/Comment.nvim',
+    opts = {},
+    config = function()
+      local ft = require('Comment.ft')
+
+      ft.set('veryl', '// %s')
+    end
+  },
 
   -- Adds git related signs to the gutter, as well as utilities for managing changes
   {
@@ -114,18 +122,13 @@ return {
   -- Highlight, edit, and navigate code
   {
     'nvim-treesitter/nvim-treesitter',
+    lazy = false,
     build = ':TSUpdate',
-    opts = {
-      ensure_installed = { 'bash', 'c', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc' },
-      ignore_install = { 'latex', 'tex' },
-      auto_install = true,
-      highlight = {
-        enable = true,
-        disable = { 'latex', 'tex', 'c' },
-        additional_vim_regex_highlighting = { 'ruby' },
-      },
-      indent = { enable = true, disable = { 'ruby', 'c' } },
-    },
+    config = function()
+      require('treesitter-context').setup {
+        install_dir = vim.fn.stdpath('data') .. '/site'
+      }
+    end,
   },
   {
     'nvim-treesitter/nvim-treesitter-context',
@@ -136,7 +139,6 @@ return {
       vim.api.nvim_set_keymap('n', '<leader>cs', '<cmd>:TSContext toggle<CR>', { noremap = true, silent = true })
     end,
   },
-
   {
     'stevearc/profile.nvim',
     config = function()
@@ -191,11 +193,4 @@ return {
         vim.keymap.set("n", "<C-S-N>", function() harpoon:list():next() end)
       end,
   },
-  {
-    'junegunn/vim-easy-align',
-    config = function()
-      vim.keymap.set('n', 'ga', '<Plug>(EasyAlign)')
-      vim.keymap.set('x', 'ga', '<Plug>(EasyAlign)')
-    end,
-  }
 }

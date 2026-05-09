@@ -40,7 +40,8 @@ return {
       { '<leader>ss', function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Workspace Symbols" },
       { "<leader>su", function() Snacks.picker.undo() end, desc = "Undo History" },
       { "<leader>uc", function() Snacks.picker.colorschemes() end, desc = "Colorschemes" },
-      { "<leader>sm", function() Snacks.picker.man() end, desc = "Man Pages" },
+      { "<leader>sM", function() Snacks.picker.man() end, desc = "Man Pages" },
+      { "<leader>sm", function() Snacks.picker.marks() end, desc = "Marks" },
       { "<leader>sb", function() Snacks.picker.buffers() end, desc = "Buffers" },
 
       -- TODO: Make it work where it puts <cword> in the buffer as a start
